@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>WORKSHOP SCHEDULE</title>
+<html lang="en-us">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<!--style-->
+<style>
+.button {
+    background-color:  #d9d9d9; /* Green */
+    border: none;
+    color: black;
+	align:middle;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+body  {
+	font-weight: bold;
+    font-family: verdana;
+    font-size: 20px;
+    background-image: url("grey.jpg");
+    background-color: #cccccc;
+}
+table {
+	font-weight: bold;
+    font-family: verdana;
+    font-size: 20px;
+}
+</style>
+</head>
+<body>
+
+<div>
+<table style="width:100%">
+  <tr>
+	<th>
+		<img src="dbit.png" style="float:left;width:104px;height:104px;"></img>
+	</th>
+	<th>
+		<h2 style="text-align:center;">DON BOSCO INSTITUTE OF TECHNOLOGY,<br>(DBIT),<br>MUMBAI 400070,<br>COMPUTER SOCIETY OF INDIA<br></h2>
+	</th>
+	<th>
+		<img src="csi-logo.png" style="float:right;width:104px;height:104px;"></img><br>
+	</th>
+  </tr>
+</table>
+</div>
+
+
+
+<hr>
+	<marquee>UPCOMING WORKSHOP SESSIONS!</marquee>
+<hr>
+
+
+<form action="action_page.php" name="csiform" id="form" onsubmit="return myFunction()">
+	<center>
+		<fieldset>
+			<legend>Workshop details</legend>
+
+
+<table style="width:100%">
+	<tr>
+		<th>WORKSHOP TITLE:<input type="text" id="name" name="name" placeholder="name"></th>
+	</tr>
+</table>
+
+<table>
+	<th>ELIGIBILITY:<select name="yr" id="yr">
+					<option value="default" disabled selected>--year--</option>
+					<option value="F.E.">F.E.</option>
+					<option value="S.E.">S.E.</option>
+					<option value="T.E.">T.E</option>
+					<option value="B.E.">B.E</option>
+					</select>
+	<th>
+	</tr>
+</table>
+
+<table>
+	<tr><th>DESCRIPTION:</th><th><textarea rows="4" cols="70" onkeyup="limit(this,100);"></textarea></th></tr>
+	<tr><th>ACADEMIC RELEVANCE:</th><th><br><textarea rows="4" cols="70" onkeyup="limit(this,100);"></textarea></th></tr>
+	<tr><th>INDUSTRIAL DEMAND:</th><th><br><textarea rows="4" cols="70" onkeyup="limit(this,100);"></textarea></th></tr>
+	<tr><th>PRE-REQUISITE<br>KNOWLEDGE:</th><th><br><textarea rows="4" cols="70" onkeyup="limit(this,100);"></textarea></th></tr>
+</table>
+<!--worshop schedule-->
+		<fieldset>
+			<legend>Workshop schedule:</legend>
+				DATE:<input type="date" name="date" placeholder="dd|mm|yyyy"><br><br>
+				NO. OF SESSIONS:<input type="text" name="no. of days" value=""><br><br>
+				TIME:from:<input type="time" name="time" value="">to:<input type="time" name="time" value=""><br><br>
+				VENUE:<input type="text" name="place" value="" onkeyup="limit(this,100);"><br><br>
+				HOURS:<input type="text" name="hrs" value=""><br><br>
+		<fieldset>
+			<legend>FEES:</legend>
+<table>
+	<tr>
+		<th>DBIT-CSI membership</th>
+			<td>:</td>
+			<td><input type="radio" name="dmem" value="1" onclick="manageFee(this);">1 year&nbsp;
+					<input type="radio" name="dmem" value="2" onclick="manageFee(this);">2 years&nbsp;
+					<input type="radio" name="dmem" value="3" onclick="manageFee(this);">3 years&nbsp;
+					<input type="radio" name="dmem" value="no" onclick="manageFee(this);">No&nbsp;</td>	
+	</tr>
+	<tr>
+			<th>CSI-India membership</th>
+			<td>:</td>
+			<td><input type="radio" name="imem" value="1" onclick="manageFee(this);">1 year&nbsp;
+					<input type="radio" name="imem" value="2" onclick="manageFee(this);">2 years&nbsp;
+					<input type="radio" name="imem" value="3" onclick="manageFee(this);">3 years&nbsp;
+					<input type="radio" name="imem" value="life" onclick="manageFee(this);">Lifetime&nbsp;
+					<input type="radio" name="imem" value="no" onclick="manageFee(this);">No&nbsp;
+			</td>
+	</tr>
+
+	<tr>
+		<th>Amount to be paid</th>
+			<td>:</td>
+			<td>&#8377;<input type="text" name="amt" readonly></td>
+	</tr>
+</table>
+
+		</fieldset>
+<!--lecturer details-->
+		<fieldset>
+			<legend>CONDUCTED BY:</legend>
+		<fieldset>
+			<legend>LECTURER:</legend>
+<table style="width:100%">
+		<tr>
+			<th>First name:<input type="text" name="name" id="name" value=""></th>
+			<th>Last name:<input type="text" name="name" id="name" value=""></th>
+			<th>E-mail: <input type="email" name="email"></th>
+		</tr>
+		<tr>
+			<th>First name:<input type="text" name="name" id="name" value=""></th>
+			<th>Last name:<input type="text" name="name" id="name" value=""></th>
+			<th>E-mail: <input type="email" name="email"></th>
+		</tr>
+		</table>
+		</fieldset>
+		<fieldset>
+<table style="width:100%">
+			<legend>VOLUNTEER:</legend>
+		<h3>1st volunteer:</h3>
+		<tr>
+			<th>First name:<input type="text" name="name" value=""></th>
+			<th>Last name:<input type="text" name="name" value=""></th>
+			<th>E-mail: <input type="email" name="email"></th>
+		</tr>
+		<tr>
+			<th>Department:<select name="dept" id="dept">
+				 <option type="default" disabled selected>--dept--</option>
+				 <option value="I.T">INFORMATION TECHNOLOGY</option>
+			     <option value="COMP">COMPUTER SCIENCE</option>
+                 <option value="EXTC">ELECTRICAL</option>
+                 <option value="MECH">MECHANICAL</option>
+                 </select> </th><th></th>
+			<th>year:<select name="yr">
+				 <option type="default" disabled selected>--year--</option>
+				 <option value="F.E.">F.E.</option>
+			     <option value="S.E.">S.E.</option>
+                 <option value="T.E.">T.E</option>
+                 <option value="B.E.">B.E</option>
+                 </select>
+			</th>
+		</tr>
+</table>
+	<h3>2nd volunteer:</h3>
+	<table style="width:100%">
+		<tr>
+			<th>First name:<input type="text" name="name" value=""></th>
+			<th>Last name:<input type="text" name="name" value=""></th>
+			<th>E-mail: <input type="email" name="email"></th>
+		</tr>
+		<tr>
+			<th>Department:<select name="dept">
+				 <option type="default" disabled selected >--dept--</option>
+				 <option value="I.T">INFORMATION TECHNOLOGY</option>
+			     <option value="COMP">COMPUTER SCIENCE</option>
+                 <option value="EXTC">ELECTRICAL</option>
+                 <option value="MECH">MECHANICAL</option>
+                 </select> </th><th></th>
+			<th>year:<select name="yr">
+				  <option type="default" disabled selected>--year--</option>
+				 <option value="F.E.">F.E.</option>
+			     <option value="S.E.">S.E.</option>
+                 <option value="T.E.">T.E</option>
+                 <option value="B.E.">B.E</option>
+                 </select></th>
+		</tr>
+</table>
+	<h3>3rd volunteer:</h3>
+<table style="width:100%">
+		<tr>
+			<th>First name:<input type="text" name="f_name" value=""></th>
+			<th>Last name:<input type="text" name="f_name" value=""></th>
+			<th>E-mail: <input type="email" name="email"></th>
+		</tr>
+		<br>
+		<tr>
+			<th>Department:<select name="dept">
+				  <option type="default" disabled selected>--dept--</option>
+				 <option value="I.T">INFORMATION TECHNOLOGY</option>
+			     <option value="COMP">COMPUTER SCIENCE</option>
+                 <option value="EXTC">ELECTRICAL</option>
+                 <option value="MECH">MECHANICAL</option>
+                 </select> </th><th></th>
+			<th>year:<select name="yr">
+				  <option type="default" disabled selected>--year--</option>
+				 <option value="F.E.">F.E.</option>
+			     <option value="S.E.">S.E.</option>
+                 <option value="T.E.">T.E</option>
+                 <option value="B.E.">B.E</option>
+                 </select></th>
+		</tr>
+</table>
+	<h3>4th volunteer:</h3>
+<table style="width:100%">	
+			<tr>
+			<th>First name:<input type="text" name="f_name" value=""></th>
+			<th>Last name:<input type="text" name="f_name" value=""></th>
+			<th>E-mail: <input type="email" id="email" name="email" /></th>
+			</tr>
+			<tr>
+			<th>Department:<select name="department">
+				 <option type="default" disabled selected >--dept--</option>
+				 <option value="I.T">INFORMATION TECHNOLOGY</option>
+			     <option value="COMP">COMPUTER SCIENCE</option>
+                 <option value="EXTC">ELECTRICAL</option>
+                 <option value="MECH">MECHANICAL</option>
+                 </select> </th><th></th>
+			<th>year:<select name="yr">
+				  <option type="default" disabled selected >--year--</option>
+				 <option value="F.E.">F.E.</option>
+			     <option value="S.E.">S.E.</option>
+                 <option value="T.E.">T.E</option>
+                 <option value="B.E.">B.E</option>
+                 </select><th></tr>
+</table>
+		</fieldset>
+		</fieldset>
+		</fieldset>
+		</fieldset>
+<center><input type="submit" /></center>
+	<script src="code.js"></script>
+</form>
+</center>
+<hr></hr>
+<marquee>THANK YOU!</marquee>
+<hr></hr>
+</body>
+</html>
